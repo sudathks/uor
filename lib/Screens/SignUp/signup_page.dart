@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uor_road_map/Screens/Login/login_page.dart';
 import 'package:uor_road_map/constanents.dart';
+import 'package:uor_road_map/Screens/Term&Con/term_con_page.dart';
 
 class SignUp  extends StatelessWidget 
 {
@@ -103,24 +104,20 @@ class _SignUpPageState extends State<SBody>
   Widget buildAgreeButton() // Terms and Conditions
   {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+     // mainAxisAlignment: MainAxisAlignment.start,
+     // crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        SizedBox(width: 10,),
-        Checkbox(
-          checkColor: secColor  ,
-          activeColor: Colors.black,
-          value:this.checkB, 
-          onChanged:(bool value){
-              setState(() {
-                this.checkB = value;
-              }
-            );
-          }
+        Radio(value: null, groupValue: null, onChanged: null),
+        RichText(text: 
+          TextSpan(
+           // text: "I",
+            children: [
+              TextSpan(
+                text: "Term & Condition",
+              ),
+            ],
           ),
-        Text(
-          "Agree with Terms & Conditions"
-          ),
+        ),
       ],
     );
   }

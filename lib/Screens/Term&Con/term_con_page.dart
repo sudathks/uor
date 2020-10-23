@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uor_road_map/Screens/SignUp/signup_page.dart';
 
 class TCPage extends StatelessWidget
 {
@@ -29,11 +30,13 @@ class _TermConPageState extends State<TCBody>
           appBar: AppBar(
             title: Text("University of Ruhuna"),
             leading: IconButton(icon: Icon(Icons.close),
-             onPressed: () {}
+             onPressed: () {
+              Navigator.pop(context);
+             }
              ),
           ),
           body: Container(
-             
+             child: Text("texting !!!! \n texting !!!! \n texting !!!!"),
           ),
       ),
     );
