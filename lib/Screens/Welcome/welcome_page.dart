@@ -8,6 +8,7 @@ class WelcomePage extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: WBody(),
     );
   }
@@ -24,11 +25,11 @@ class _WelcomePageState extends State<WBody>
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          "UOR NAVIGATION MAP",
+          "WELCOME",
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.height/25,
+              fontSize: MediaQuery.of(context).size.height/15,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
       ],
@@ -39,6 +40,7 @@ class _WelcomePageState extends State<WBody>
   {
     return SafeArea( 
       child: Scaffold(
+        resizeToAvoidBottomPadding: false,
           backgroundColor: mainColor,
         body: Stack(
           children: <Widget>[
@@ -90,9 +92,11 @@ class _WelcomePageState extends State<WBody>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      "WELCOME",
+                      "        UOR \n NAVIGATION \n    SYSTEM",
                       style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.height / 30,
+                        //backgroundColor: Colors.lightBlue,
+                        fontSize: MediaQuery.of(context).size.height / 20,
+                        color: Colors.red,
                       ),
                     ),
                   ],

@@ -7,6 +7,7 @@ class Login extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: LBody(),
     );
   }
@@ -28,7 +29,7 @@ class _LoginPageState extends State<LBody>
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.height/25,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
       ],
@@ -83,7 +84,12 @@ class _LoginPageState extends State<LBody>
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        FlatButton(onPressed: (){}, child: Text("Forgotten your username or password?"),),
+        FlatButton(onPressed: (){}, child: Text("Forgotten your username or password?",
+          style: TextStyle(
+            color: secColor,
+          ),
+        ),
+        ),
       ],
     );
   }
@@ -124,7 +130,7 @@ class _LoginPageState extends State<LBody>
         Padding(
           padding: EdgeInsets.only(top: 40),
           child: FlatButton(
-            onPressed: () => {MaterialPageRoute(builder: (context) => SignUp()),},
+            onPressed: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp())), },
             child: RichText(
               text: TextSpan(
                 children: [
@@ -177,7 +183,8 @@ class _LoginPageState extends State<LBody>
                     Text(
                       "Login",
                       style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.height / 30,
+                        color: secColor,
+                        fontSize: MediaQuery.of(context).size.height / 25,
                       ),
                     ),
                   ],
@@ -199,6 +206,7 @@ class _LoginPageState extends State<LBody>
   {
     return SafeArea( 
       child: Scaffold(
+          resizeToAvoidBottomPadding: false,
           backgroundColor: mainColor,
         body: Stack(
           children: <Widget>[

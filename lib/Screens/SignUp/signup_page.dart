@@ -7,6 +7,7 @@ class SignUp  extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: SBody(),
     );
   }
@@ -29,7 +30,7 @@ class _SignUpPageState extends State<SBody>
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.height/25,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
       ],
@@ -107,13 +108,14 @@ class _SignUpPageState extends State<SBody>
       children: <Widget>[
         SizedBox(width: 10,),
         Checkbox(
-          checkColor: Colors.red,
-          activeColor: Colors.white,
+          checkColor: secColor  ,
+          activeColor: Colors.black,
           value:this.checkB, 
           onChanged:(bool value){
-            setState(() {
-              this.checkB = value;
-            });
+              setState(() {
+                this.checkB = value;
+              }
+            );
           }
           ),
         Text(
@@ -159,14 +161,14 @@ class _SignUpPageState extends State<SBody>
         Padding(
           padding: EdgeInsets.only(top: 40),
           child: FlatButton(
-            onPressed: () => {MaterialPageRoute(builder: (context) => Login()),},
+            onPressed: () => {Navigator.push(context, MaterialPageRoute(builder: (context) => Login())),},
             child: RichText(
               text: TextSpan(
                 children: [
                   TextSpan(
                     text: "I'm already a member",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: secColor,
                       fontSize: MediaQuery.of(context).size.height / 40,
                       fontWeight: FontWeight.w400,
                     ),
@@ -204,7 +206,8 @@ class _SignUpPageState extends State<SBody>
                     Text(
                       "Sign Up",
                       style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.height / 30,
+                        fontSize: MediaQuery.of(context).size.height / 25,
+                        color: secColor,
                       ),
                     ),
                   ],
@@ -227,6 +230,7 @@ class _SignUpPageState extends State<SBody>
   {
     return SafeArea( 
       child: Scaffold(
+        resizeToAvoidBottomPadding: false,
           backgroundColor: mainColor,
         body: Stack(
           children: <Widget>[
